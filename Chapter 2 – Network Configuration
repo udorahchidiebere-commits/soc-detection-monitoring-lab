@@ -1,0 +1,173 @@
+# Chapter 2 – Network Configuration
+
+## Objective
+
+The objective of this chapter was to configure the network infrastructure for the SOC Detection and Monitoring Lab. A properly configured network is essential for enabling communication between the attacker, victim, and SIEM, allowing attack simulations, log collection, and security monitoring.
+
+---
+
+## Lab Network Overview
+
+The SOC lab consists of three virtual machines connected using Oracle VirtualBox.
+
+| Virtual Machine | Role | IP Address |
+|----------------|------|------------|
+| Ubuntu Server | Splunk Enterprise (SIEM) | 10.10.10.4 |
+| Kali Linux | Attacker | 10.10.10.5 |
+| Windows 10 | Victim | 10.10.10.6 |
+
+The virtual machines were connected using a **VirtualBox NAT Network**, allowing communication between the systems while providing internet access through the host machine's network connection.
+
+### Screenshot 1 – VirtualBox NAT Network Configuration
+
+> Insert screenshot here.
+
+```markdown
+![VirtualBox NAT Network](../screenshots/network/virtualbox-nat-network.png)
+```
+
+---
+
+## Network Configuration
+
+The following tasks were completed during the network configuration:
+
+- Configured a VirtualBox NAT Network.
+- Connected all three virtual machines to the NAT Network.
+- Verified that each virtual machine received an IP address through DHCP.
+- Confirmed internet connectivity using the host's mobile hotspot.
+- Performed connectivity testing between the virtual machines.
+
+---
+
+## IP Address Verification
+
+### Windows 10
+
+```cmd
+ipconfig
+```
+
+### Screenshot 2 – Windows IP Configuration
+
+> Insert screenshot here.
+
+```markdown
+![Windows IP Configuration](../screenshots/network/windows-ipconfig.png)
+```
+
+---
+
+### Ubuntu Server
+
+```bash
+ip addr
+```
+
+### Screenshot 3 – Ubuntu Server IP Address
+
+> Insert screenshot here.
+
+```markdown
+![Ubuntu IP Address](../screenshots/network/ubuntu-ipaddr.png)
+```
+
+---
+
+### Kali Linux
+
+```bash
+ip addr
+```
+
+### Screenshot 4 – Kali Linux IP Address
+
+> Insert screenshot here.
+
+```markdown
+![Kali IP Address](../screenshots/network/kali-ipaddr.png)
+```
+
+---
+
+## Connectivity Verification
+
+The following tests were performed:
+
+| Test | Result |
+|------|--------|
+| Windows → Ubuntu | ✅ Successful |
+| Windows → Kali | ✅ Successful |
+| Ubuntu → Kali | ✅ Successful |
+| Kali → Ubuntu | ✅ Successful |
+| Kali → Windows | ❌ Unsuccessful |
+| Ubuntu → Windows | ❌ Unsuccessful |
+
+### Screenshot 5 – Successful Ping from Windows
+
+> Insert screenshot here.
+
+```markdown
+![Windows Ping Test](../screenshots/network/windows-ping.png)
+```
+
+### Screenshot 6 – Successful Ping from Ubuntu
+
+> Insert screenshot here.
+
+```markdown
+![Ubuntu Ping Test](../screenshots/network/ubuntu-ping.png)
+```
+
+### Screenshot 7 – Successful Ping from Kali
+
+> Insert screenshot here.
+
+```markdown
+![Kali Ping Test](../screenshots/network/kali-ping.png)
+```
+
+The inability of Ubuntu Server and Kali Linux to ping the Windows 10 virtual machine is most likely caused by Windows Defender Firewall blocking ICMP Echo Requests.
+
+---
+
+## Internet Connectivity
+
+All three virtual machines successfully accessed the internet through the host computer's mobile hotspot.
+
+### Screenshot 8 – Internet Connectivity
+
+> Insert screenshot here.
+
+```markdown
+![Internet Connectivity](../screenshots/network/internet-connectivity.png)
+```
+
+---
+
+## Challenges
+
+No networking configuration issues were encountered during the setup process. All virtual machines obtained IP addresses successfully through DHCP and internet connectivity was verified. The only observation was that Windows 10 did not respond to ICMP echo requests from Ubuntu Server and Kali Linux, which is most likely due to Windows Firewall settings.
+
+---
+
+## Lessons Learned
+
+This chapter improved my understanding of VirtualBox networking, DHCP address assignment, and connectivity testing using standard networking tools. I also learned the importance of validating communication between systems before deploying security monitoring tools.
+
+---
+
+## Skills Demonstrated
+
+- Oracle VirtualBox Networking
+- NAT Network Configuration
+- DHCP Configuration
+- TCP/IP Networking
+- Connectivity Testing
+- Network Troubleshooting
+
+---
+
+## Conclusion
+
+The network configuration was successfully completed. All three virtual machines were connected to the same VirtualBox NAT Network, received valid IP addresses through DHCP, and had internet connectivity. The environment is now ready for the installation and configuration of Splunk Enterprise and the remaining components of the SOC Detection and Monitoring Lab.
