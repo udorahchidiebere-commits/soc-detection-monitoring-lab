@@ -1,0 +1,195 @@
+# Chapter 4 – Splunk Enterprise Installation
+
+## Objective
+
+The objective of this chapter was to install and configure Splunk Enterprise on the Ubuntu Server virtual machine. Splunk Enterprise serves as the centralized Security Information and Event Management (SIEM) platform responsible for collecting, indexing, searching, and analyzing security events generated throughout the SOC Detection and Monitoring Lab.
+
+---
+
+## Lab Environment
+
+| Component | Configuration |
+|----------|---------------|
+| Operating System | Ubuntu Server |
+| SIEM Platform | Splunk Enterprise 9.4.2 |
+| Virtualization Platform | Oracle VirtualBox |
+| Ubuntu Hostname | splunk |
+| Ubuntu IP Address | 10.10.10.4 |
+| Network Type | NAT Network |
+
+---
+
+# Step 1 – Verify Available Disk Space
+
+Before installing Splunk Enterprise, the available disk space on the Ubuntu Server was verified.
+
+### Command
+
+```bash
+df -h
+```
+
+### Screenshot
+
+**Insert Screenshot 1 here**
+
+*Caption:* Available disk space on the Ubuntu Server before installing Splunk Enterprise.
+
+---
+
+# Step 2 – Verify the Installation Package
+
+The Splunk Enterprise installation package was confirmed to be present on the Ubuntu Server.
+
+### Command
+
+```bash
+ls
+```
+
+### Screenshot
+
+**Insert Screenshot 2 here**
+
+*Caption:* Splunk Enterprise installation package available on the Ubuntu Server.
+
+---
+
+# Step 3 – Install Splunk Enterprise
+
+The Splunk Enterprise Debian package was installed using the `dpkg` package manager.
+
+### Command
+
+```bash
+sudo dpkg -i splunk-9.4.2-e9664af3d956-linux-amd64.deb
+```
+
+### Screenshot
+
+**Insert Screenshot 3 here**
+
+*Caption:* Successful installation of Splunk Enterprise.
+
+---
+
+# Step 4 – Start Splunk Enterprise
+
+Splunk Enterprise was started for the first time. During initialization, the license agreement was accepted and the administrator account was created.
+
+### Command
+
+```bash
+sudo /opt/splunk/bin/splunk start --accept-license
+```
+
+### Screenshot
+
+**Insert Screenshot 4 here**
+
+*Caption:* Initial startup of Splunk Enterprise and administrator account creation.
+
+---
+
+# Step 5 – Enable Automatic Startup
+
+Splunk Enterprise was configured to start automatically whenever the Ubuntu Server boots.
+
+### Command
+
+```bash
+sudo /opt/splunk/bin/splunk enable boot-start
+```
+
+### Screenshot
+
+**Insert Screenshot 5 here**
+
+*Caption:* Splunk configured to start automatically during system startup.
+
+---
+
+# Step 6 – Verify the Splunk Service
+
+The Splunk service status was verified to ensure that it was running successfully.
+
+### Command
+
+```bash
+sudo /opt/splunk/bin/splunk status
+```
+
+### Screenshot
+
+**Insert Screenshot 6 here**
+
+*Caption:* Splunk service running successfully.
+
+---
+
+# Step 7 – Verify the Server IP Address
+
+The Ubuntu Server IP address was confirmed to ensure that the Splunk web interface could be accessed from other systems within the lab.
+
+### Command
+
+```bash
+ip addr
+```
+
+### Screenshot
+
+**Insert Screenshot 7 here**
+
+*Caption:* Ubuntu Server IP address assigned on the lab network.
+
+---
+
+# Step 8 – Access the Splunk Web Interface
+
+The Splunk Enterprise web interface was accessed successfully from the Windows 10 virtual machine.
+
+### URL
+
+```
+http://10.10.10.4:8000
+```
+
+### Screenshot
+
+**Insert Screenshot 8 here**
+
+*Caption:* Splunk Enterprise login page displayed in the Windows 10 VM.
+
+---
+
+# Outcome
+
+Splunk Enterprise was successfully installed and configured on the Ubuntu Server virtual machine. The SIEM platform was verified to be operational, configured to start automatically during system boot, and accessible through the web interface from the Windows 10 virtual machine. This completes the deployment of the centralized SIEM server for the SOC Detection and Monitoring Lab.
+
+---
+
+# Skills Demonstrated
+
+- Ubuntu Server Administration
+- Linux Package Management
+- Splunk Enterprise Installation
+- SIEM Deployment
+- Linux Service Management
+- VirtualBox Administration
+- Network Configuration
+- System Verification
+
+---
+
+# Commands Summary
+
+```bash
+df -h
+ls
+sudo dpkg -i splunk-9.4.2-e9664af3d956-linux-amd64.deb
+sudo /opt/splunk/bin/splunk start --accept-license
+sudo /opt/splunk/bin/splunk enable boot-start
+sudo /opt/splunk/bin/splunk status
+ip addr
+```
