@@ -1,0 +1,212 @@
+# Chapter 3 – Ubuntu Server Installation
+
+## Objective
+
+The objective of this chapter was to install and configure Ubuntu Server as the operating system that will host Splunk Enterprise for the SOC Detection and Monitoring Lab. This server will act as the centralized platform for log collection, analysis, and security monitoring throughout the project.
+
+---
+
+## Background
+
+Ubuntu Server is a lightweight, stable, and widely used Linux server operating system. It is commonly deployed in enterprise environments to host services and applications such as SIEM platforms. In this lab, Ubuntu Server was selected to host Splunk Enterprise because of its stability, performance, and compatibility.
+
+---
+
+## Virtual Machine Specifications
+
+| Specification | Value |
+|--------------|-------|
+| Operating System | Ubuntu Server 24.04 LTS |
+| RAM | 1 GB |
+| CPU | 1 Core |
+| Disk Size | 10 GB |
+| Installation Method | ISO Image |
+
+---
+
+## Installation Process
+
+Ubuntu Server was installed using the official ISO image in Oracle VirtualBox. After completing the installation, the server was successfully booted and configured for internet connectivity. The operating system was then updated to ensure all installed packages were current before proceeding with additional software installation.
+
+### Screenshot 1 – Ubuntu Server Login
+
+> Insert screenshot here.
+
+```markdown
+![Ubuntu Login](../screenshots/ubuntu/ubuntu-login.png)
+```
+
+---
+
+## System Configuration
+
+The following commands were used to prepare and verify the Ubuntu Server installation.
+
+### Update Package Repository
+
+```bash
+sudo apt update
+```
+
+This command refreshed the package repository to retrieve the latest package information.
+
+### Screenshot 2 – Package Update
+
+> Insert screenshot here.
+
+```markdown
+![APT Update](../screenshots/ubuntu/apt-update.png)
+```
+
+---
+
+### Upgrade Installed Packages
+
+```bash
+sudo apt upgrade -y
+```
+
+This command upgraded installed packages to their latest available versions.
+
+### Screenshot 3 – Package Upgrade
+
+> Insert screenshot here.
+
+```markdown
+![APT Upgrade](../screenshots/ubuntu/apt-upgrade.png)
+```
+
+---
+
+### Verify System Information
+
+```bash
+hostnamectl
+```
+
+This command displayed the hostname and operating system information.
+
+### Screenshot 4 – Hostname Information
+
+> Insert screenshot here.
+
+```markdown
+![Hostname Information](../screenshots/ubuntu/hostnamectl.png)
+```
+
+---
+
+### Verify Network Configuration
+
+```bash
+ip addr
+```
+
+This command displayed the network interface configuration and IP address assigned to the server.
+
+### Screenshot 5 – IP Address
+
+> Insert screenshot here.
+
+```markdown
+![IP Address](../screenshots/ubuntu/ip-address.png)
+```
+
+---
+
+### Verify Internet Connectivity
+
+```bash
+ping -c 4 google.com
+```
+
+This command verified that the server could successfully resolve domain names and communicate with external hosts.
+
+### Screenshot 6 – Internet Connectivity Test
+
+> Insert screenshot here.
+
+```markdown
+![Ping Google](../screenshots/ubuntu/ping-google.png)
+```
+
+---
+
+### Check Disk Usage
+
+```bash
+df -h
+```
+
+This command displayed the available and used storage space on the server.
+
+### Screenshot 7 – Disk Usage
+
+> Insert screenshot here.
+
+```markdown
+![Disk Usage](../screenshots/ubuntu/disk-usage.png)
+```
+
+---
+
+### Check Memory Usage
+
+```bash
+free -h
+```
+
+This command displayed the server's memory usage.
+
+### Screenshot 8 – Memory Usage
+
+> Insert screenshot here.
+
+```markdown
+![Memory Usage](../screenshots/ubuntu/memory-usage.png)
+```
+
+---
+
+## Validation
+
+The following verification checks were successfully completed:
+
+- Ubuntu Server installed successfully.
+- The server booted without errors.
+- Internet connectivity was verified.
+- Package repositories were updated.
+- Installed packages were upgraded.
+- System information was verified.
+- Network configuration was confirmed.
+- Disk and memory resources were verified.
+
+---
+
+## Challenges Encountered
+
+During the initial setup, the server was unable to resolve `google.com`, resulting in a **"Temporary failure in name resolution"** error. This issue was caused by a DNS configuration problem. After correcting the DNS configuration, internet connectivity was successfully restored and the server was able to resolve domain names correctly.
+
+---
+
+## Lessons Learned
+
+This chapter provided practical experience installing and configuring Ubuntu Server in a virtual environment. I learned how to verify system configuration, troubleshoot DNS resolution issues, update Linux packages, and validate that the server was ready to host enterprise software.
+
+---
+
+## Skills Demonstrated
+
+- Ubuntu Server Installation
+- Linux System Administration
+- Package Management using APT
+- Network Configuration
+- DNS Troubleshooting
+- System Verification
+- VirtualBox Administration
+
+---
+
+## Conclusion
+
+Ubuntu Server was successfully installed, configured, and prepared for deployment. The operating system is fully operational and ready for the installation of Splunk Enterprise, which will serve as the SIEM platform for the SOC Detection and Monitoring Lab.
