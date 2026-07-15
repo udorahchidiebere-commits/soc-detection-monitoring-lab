@@ -35,22 +35,21 @@ The lab is being built step by step and documented throughout the entire process
 
 ## Documentation
 
-The documentation will be completed one chapter at a time.
-
-- Chapter 1 – Lab Architecture *(In Progress)*
-- Chapter 2 – VirtualBox Setup
-- Chapter 3 – Network Configuration
-- Chapter 4 – Ubuntu Server Installation
-- Chapter 5 – Splunk Installation
-- Chapter 6 – Windows Logging
-- Chapter 7 – Splunk Fundamentals
-- Chapter 8 – SPL Queries
-- Chapter 9 – Attack Simulations
-- Chapter 10 – Investigations
-- Chapter 11 – Detection Engineering
-- Chapter 12 – Alerts
-- Chapter 13 – Dashboards
-- Chapter 14 – Incident Response
+| Chapter | Status |
+|---------|--------|
+| Chapter 1 – Lab Architecture | ✅ Complete |
+| Chapter 2 – Network Configuration | ✅ Complete |
+| Chapter 3 – Ubuntu Server Installation | ⏳ In Progress |
+| Chapter 4 – Splunk Installation | ⏳ Pending |
+| Chapter 5 – Windows Logging | ⏳ Pending |
+| Chapter 6 – Splunk Fundamentals | ⏳ Pending |
+| Chapter 7 – SPL Queries | ⏳ Pending |
+| Chapter 8 – Attack Simulations | ⏳ Pending |
+| Chapter 9 – Investigations | ⏳ Pending |
+| Chapter 10 – Detection Engineering | ⏳ Pending |
+| Chapter 11 – Alerts | ⏳ Pending |
+| Chapter 12 – Dashboards | ⏳ Pending |
+| Chapter 13 – Incident Response | ⏳ Pending |
 
 ---
 
